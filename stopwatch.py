@@ -1,5 +1,5 @@
 import tkinter as tk
-from datetime import datetime, timezone
+from datetime import datetime, time, timezone
 
 counter = 00000 #?
 running = False
@@ -39,7 +39,7 @@ class StopWatch(tk.Tk):
                 if counter==00000:
                     display = 'Starting...'
                 else:
-                    tt = datetime.fromtimestamp(counter)
+                    tt = datetime.fromtimestamp(counter, tz=timezone.utc)
                     string = tt.strftime('%H:%M:%S')
                     display=string
                 label['text'] = display
