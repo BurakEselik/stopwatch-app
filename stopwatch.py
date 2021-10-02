@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter.constants import S
 
 class StopWatch(tk.Tk):
 
@@ -7,8 +8,24 @@ class StopWatch(tk.Tk):
 
         #geometry
         self.title('StopWatch App')
-        self.resizable(width=False, height=False)
-        self.geometry('200x100')
+        self.resizable(width=True, height=True)
+        self.minsize(width=250, height=80)
+        self.maxsize(width=400, height=180)
+
+        #icon
+        self.icon = tk.PhotoImage(file='stopwatch.png')
+        self.iconphoto(False, self.icon)
+
+        self.label = tk.Label(self, text='Welcome!', fg='black', font='Verdana 24 bold')
+        self.label.pack()
+        self.f = tk.Frame(self)
+        start = tk.Button(self.f, text='Start', width=6, command=...)
+        stop = tk.Button(self.f, width=6, state='disabled', command=...)
+        reset = tk.Button(self.f, width=6, state='disabled', command=...)
+        self.f.pack(anchor= 'center', pady=5)
+        start.pack(side='left')
+        stop.pack(side='left')
+        reset.pack(side='left')
 
 
 
