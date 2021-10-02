@@ -23,7 +23,7 @@ class StopWatch(tk.Tk):
         self.label.pack()
         self.f = tk.Frame(self)
         self.start = tk.Button(self.f, text='Start', width=6, command=lambda: self.Start(self.label))
-        self.stop = tk.Button(self.f, text='Stop', width=6, state='disabled', command=lambda: self.Stop)
+        self.stop = tk.Button(self.f, text='Stop', width=6, state='disabled', command=lambda: self.Stop())
         self.reset = tk.Button(self.f, text='Reset', width=6, state='disabled', command=lambda: self.Reset(self.label))
         self.f.pack(anchor= 'center', pady=5)
         self.start.pack(side='left')
